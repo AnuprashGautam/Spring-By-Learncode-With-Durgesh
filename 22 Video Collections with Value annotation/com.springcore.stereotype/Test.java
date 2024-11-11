@@ -1,0 +1,18 @@
+package com.springcore.stereotype;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test {
+
+	public static void main(String[] args) {
+		ApplicationContext context= new ClassPathXmlApplicationContext("com/springcore/stereotype/stereoconfig.xml");
+		
+		Student stud=(Student)context.getBean("ob");
+		
+		System.out.println(stud);
+		System.out.println("__________________________________________");
+		System.out.println(stud.getAddresses());
+		System.out.println(stud.getAddresses().getClass().getName());
+	}
+}
